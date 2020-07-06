@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class cadastro extends Model
+class posto extends Model
 {
-    protected $table = "cadastro";
+    protected $table = "posto";
     public $timestamps = false;
     
     const UPDATED_AT = null;
@@ -14,7 +14,7 @@ class cadastro extends Model
 
     protected $fillable = [
 
-        'nome', 'posto', 'pais', 'dtc_criacao',
+        'nome_posto','tipo_posto' ,'dtc_criacao',
 
     ];
 }

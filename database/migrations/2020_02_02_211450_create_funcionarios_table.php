@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCadastroTable extends Migration
+class CreateFuncionariosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateCadastroTable extends Migration
      */
     public function up()
     {
-        Schema::create('cadastro', function (Blueprint $table) {
-            $table->increments('id');// Id da tabela (chave primária e incremento)
+        Schema::create('funcionarios', function (Blueprint $table) {
+            $table->increments('id');
             $table->string('nome', 50);
-            $table->string('posto', 50);
-            $table->string('pais', 50);
-            $table->timestamp('dtc_criacao', 0)->nullable();
+            $table->string('cidade', 50);
+            $table->string('telefone', 20);
+            $table->timestamps();
         });
     }
 
@@ -29,6 +29,6 @@ class CreateCadastroTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('funcionarios');
     }
 }
